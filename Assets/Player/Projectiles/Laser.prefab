@@ -126,6 +126,7 @@ MonoBehaviour:
   laserCollide: {fileID: 4006775428022089397}
   player: {fileID: 0}
   scorePayouts: 0a0000000f0000001e000000
+  impactPrefab: {fileID: 1745663113793747120, guid: 3e5f4ce94e27b044180ce7c44ce35f98, type: 3}
 --- !u!54 &7693504578950146347
 Rigidbody:
   m_ObjectHideFlags: 0

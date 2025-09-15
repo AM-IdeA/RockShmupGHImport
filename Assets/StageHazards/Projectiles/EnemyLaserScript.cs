@@ -9,6 +9,7 @@ public class EnemyLaserScript : MonoBehaviour
     public Rigidbody rb;
     public Collider laserCollide;
     public EnergyGaugeFuncs playerEnergyGaugeFuncs;
+    public GameObject impactPrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -24,8 +25,10 @@ public class EnemyLaserScript : MonoBehaviour
         if (laserCollide.gameObject.CompareTag("Player"))
         {
             Debug.Log("Player Hit");
+            Instantiate(impactPrefab, laserCollide.transform.position, laserCollide.transform.rotation);
             playerEnergyGaugeFuncs = laserCollide.gameObject.GetComponent<EnergyGaugeFuncs>();
-            playerEnergyGaugeFuncs.energyLeft = playerEnergyGaugeFuncs.energyLeft - 20 ;
+            playerEnergyGaugeFuncs.energyLeft = playerEnergyGaugeFuncs.energyLeft - 20;
+            //Vector3 SpawnHere = (laserCollide.transform.position);
             //Destroy(laserCollide.gameObject);
             Destroy(gameObject);
         }

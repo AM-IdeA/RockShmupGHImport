@@ -16,6 +16,8 @@ public class ShipHandler : MonoBehaviour
 
     EnergyGaugeFuncs energyGaugeFuncs;
 
+    public GameObject boostFlame;
+
     public void Start()
     {
         energyGaugeFuncs = GetComponent<EnergyGaugeFuncs>();
@@ -62,6 +64,7 @@ public class ShipHandler : MonoBehaviour
 
         else
         {
+            boostFlame.SetActive(false);
             speed = 150;
             shipRb.drag = 10;
             //shipRb.AddForce(0, 0, 0);
@@ -77,6 +80,7 @@ public class ShipHandler : MonoBehaviour
     {
         if (energyGaugeFuncs.boostPower > 0)
             {
+            boostFlame.SetActive(true);
             speed = 300;
             shipRb.drag = 5;
             energyGaugeFuncs.boostPower--;

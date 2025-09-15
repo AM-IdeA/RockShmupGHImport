@@ -12,6 +12,7 @@ public class LaserScript : MonoBehaviour
     EnergyGaugeFuncs playerEnergyGauge;
     EnemyShipScript collidedShipScript;
     public int[] scorePayouts;
+    public GameObject impactPrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -36,9 +37,10 @@ public class LaserScript : MonoBehaviour
             Debug.Log("Enemy Hit");
             collidedShipScript = laserCollide.gameObject.GetComponent<EnemyShipScript>();
             collidedShipScript.health--;
-            Destroy(gameObject);
+            Instantiate(impactPrefab, laserCollide.transform.position, laserCollide.transform.rotation);
             playerEnergyGauge.energyLeft = playerEnergyGauge.energyLeft + 30;
             playerEnergyGauge.boostPower = playerEnergyGauge.boostPower + 20;
+            Destroy(gameObject);
             /*if ((playerEnergyGauge.energyLeft + 30) > 1500)
             {
                 playerEnergyGauge.energyLeft = 1500;

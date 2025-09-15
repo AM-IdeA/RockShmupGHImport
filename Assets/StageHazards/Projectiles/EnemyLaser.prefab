@@ -151,3 +151,5 @@ MonoBehaviour:
   speed: 100
   rb: {fileID: 7693504578950146347}
   laserCollide: {fileID: 4006775428022089397}
+  playerEnergyGaugeFuncs: {fileID: 0}
+  impactPrefab: {fileID: 1745663113793747120, guid: 3e5f4ce94e27b044180ce7c44ce35f98, type: 3}

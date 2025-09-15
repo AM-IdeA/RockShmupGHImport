@@ -76,6 +76,10 @@ public class PlayerInput : MonoBehaviour
         }
 
 
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
 
     void FixedUpdate()
